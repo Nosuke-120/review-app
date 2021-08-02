@@ -1,7 +1,9 @@
 import express from "express";
+import cors from "cors";
 import * as data from "./sample-data.js";
 
 const app = express();
+app.use(cors());
 
 app.get("/restaurants", async (req, res) => {
   const limit = +req.query.limit || 5;
