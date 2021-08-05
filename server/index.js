@@ -3,6 +3,7 @@ import cors from "cors";
 import * as data from "./sample-data.js";
 
 const app = express();
+// 別ポートからのアクセスを許可
 app.use(cors());
 
 app.get("/restaurants", async (req, res) => {
