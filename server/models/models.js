@@ -2,10 +2,15 @@ import Sequelize from "sequelize";
 
 const { DataTypes } = Sequelize;
 
-const url =
-  process.env.DATABASE_URL ||
-  "postgres://postgres:postgres@localhost:5432/review_app";
-export const sequelize = new Sequelize(url);
+const host = '127.0.0.1';
+const database = 'review_app_development';
+const username = 'root';
+const password = '';
+
+export const sequelize = new Sequelize(database, username, password, {
+  host: host,
+  dialect: 'mysql',
+});
 
 export const User = sequelize.define(
   "user",
